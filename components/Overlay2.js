@@ -1,11 +1,10 @@
-import * as React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-import image from './ImagePicker';
-import imageTaken from './CameraScreen';
-import {testPicture} from './CameraScreen';
+export default function Overlay2({navigation, route, newImage}) {
 
-export default function Overlay2({navigation, route}) {
+  if(newImage == null){newImage = '/Users/lclausen/Documents/Programmering/test101 copy/assets/brownDogForApp02.jpg'};
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -13,11 +12,7 @@ export default function Overlay2({navigation, route}) {
         navigation.navigate('Camera')}
       >
        <Image style={styles.logo} 
-       source={require('../assets/brownDogForApp02.jpg')} 
-       />
-
-       <Image style={styles.logo} 
-       source={testPicture} 
+       source={source= {uri: newImage}} 
        />
         
       </TouchableOpacity>

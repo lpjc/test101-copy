@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Button, Image, View, Platform } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
-export default function ImagePickerExample({navigation}) {
+export default function ImagePickerExample({navigation, onImgSucc}) {
   const [image, setImage] = useState(null);
 
   useEffect(() => {
+    
     (async () => {
       if (Platform.OS !== 'web') {
         const { status } = await ImagePicker.requestCameraRollPermissionsAsync();
@@ -28,6 +29,8 @@ export default function ImagePickerExample({navigation}) {
 
     if (!result.cancelled) {
       setImage(result.uri);
+      navigation.navigate('Home',{myPicture : result.uri});
+     
     }
   };
 

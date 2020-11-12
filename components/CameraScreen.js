@@ -1,15 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
 
-export default function CameraScreen({navigation}) {
+export default function CameraScreen({ navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
   const [cameraRef, setCameraRef] = useState(null)
   const [type, setType] = useState(Camera.Constants.Type.back);
-  const [imageTaken, setImageTaken] =useState(null)
-  const [testPicture, setTestPic] = useState(null)
-
-  setTestPic(require('../assets/brownDogForApp02.jpg'));
 
   useEffect(() => {
     (async () => {
@@ -28,7 +24,8 @@ export default function CameraScreen({navigation}) {
   return (
     <View style={{ flex: 1 }}>
       <Camera style={{ flex: 1 }} type={type} ref={ref => {
-        setCameraRef(ref) ; }}>
+        setCameraRef(ref);
+      }}>
         <View
           style={{
             flex: 1,
@@ -56,12 +53,11 @@ export default function CameraScreen({navigation}) {
               alignSelf: 'flex-end',
               alignItems: 'center',
               justifyContent: 'space-around',
-            }}onPress={async() => {
-              if(cameraRef){
+            }} onPress={async () => {
+              if (cameraRef) {
                 let photo = await cameraRef.takePictureAsync();
-                setImageTaken(photo.uri);
-                console.log('photo', photo, imageTaken);
-                navigation.navigate('Home',{myPicture: imageTaken})
+                console.log('photo', photo, photo.uri);
+                navigation.navigate('Home', { myPicture: photo.uri });
               }
             }}>
             <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}> SNAP </Text>

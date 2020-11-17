@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Button, Image, View, Platform } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
-export default function ImagePickerExample({navigation, onImgSucc}) {
+export default function ImagePickerExample({ navigation, onImgSucc }) {
   const [image, setImage] = useState(null);
 
   useEffect(() => {
-    
+
     (async () => {
       if (Platform.OS !== 'web') {
         const { status } = await ImagePicker.requestCameraRollPermissionsAsync();
@@ -29,36 +29,37 @@ export default function ImagePickerExample({navigation, onImgSucc}) {
 
     if (!result.cancelled) {
       setImage(result.uri);
-      navigation.navigate('Home',{myPicture : result.uri});
-     
+      navigation.navigate('Home', { myPicture: result.uri });
+
     }
   };
 
-  const takePicture = () => 
+  const takePicture = () =>
     navigation.navigate('Camera2')
-  ;
+    ;
 
   return (
-    <View style={{ 
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'space-around' }}
-        >
+    <View style={{
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'space-around'
+    }}
+    >
 
-        <Button 
-        title="Pick an image from camera roll" 
-        onPress={pickImage} 
-        />
+      <Button
+        title="Pick an image from camera roll"
+        onPress={pickImage}
+      />
 
-        <Button 
-        title="Take a picture with your camera" 
-        onPress={takePicture} 
-        />
+      <Button
+        title="Take a picture with your camera"
+        onPress={takePicture}
+      />
 
-        {image && <Image 
-        source={{ uri: image }} 
-        style={{ width: 200, height: 200 }} 
-        />}
+      {image && <Image
+        source={{ uri: image }}
+        style={{ width: 200, height: 200 }}
+      />}
 
     </View>
   );

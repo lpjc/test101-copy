@@ -1,20 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-export default function Overlay2({navigation, route, newImage}) {
+export default function Overlay2({ navigation, route, newImage }) {
 
-  if(newImage == null){newImage = '/Users/lclausen/Documents/Programmering/test101 copy/assets/brownDogForApp02.jpg'};
+  if (newImage == null) { newImage = "https://i.imgur.com/KctSLca.jpeg" };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity
-      onPress={() =>
-        navigation.navigate('Camera')}
+        onPress={() =>
+          navigation.navigate('Camera')}
       >
-       <Image style={styles.logo} 
-       source={source= {uri: newImage}} 
-       />
-        
+        <Image style={styles.logo}
+          source={source = { uri: newImage }}
+        />
+
       </TouchableOpacity>
       <Text style={styles.paragraph}>
         Maybe a step counter here?
@@ -24,13 +24,13 @@ export default function Overlay2({navigation, route, newImage}) {
 }
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     //flexDirection: 'column',
     alignItems: 'center',
     //justifyContent: 'flex-end',
     flexDirection: 'row-reverse',
     padding: 20,
-    height: 90 ,
+    height: 90,
   },
 
   paragraph: {

@@ -12,7 +12,7 @@ export default function HomeScreen({ navigation, route }) {
     if (route.params) {
       setNewImage(route.params.myPicture)
     }
-  }, [route?.params?.myPicture]);
+  });
 
   const [newImage, setNewImage] = useState(null)
 

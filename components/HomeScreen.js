@@ -24,13 +24,18 @@ export default function HomeScreen({ navigation, route }) {
   return (
     <View style={styles.screenContainer}>
        <MapView
-          style={styles.map}
+          style={styles.map} initialRegion={{
+            latitude: 55.641267,
+            longitude: 12.517784,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
           >
         </MapView>
         
-        <View style={styles.topContainer} pointerEvents="none" >
+        <View style={styles.topContainer} pointerEvents="box-none">
         <TouchableOpacity style={styles.menuButton}
-          onPress={() => console.log('hej', newImage, ASPECT_RATIO)}
+          onPress={() => console.log('hej', newImage, ASPECT_RATIO,)}
         >
           <Text style={styles.paragraph2}> Hej-tester</Text>
         </TouchableOpacity>

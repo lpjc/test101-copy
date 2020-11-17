@@ -28,17 +28,15 @@ export default function HomeScreen({ navigation, route }) {
           >
         </MapView>
         
-        <View style={styles.topContainer}>
+        <View style={styles.topContainer} pointerEvents="none" >
         <TouchableOpacity style={styles.menuButton}
           onPress={() => console.log('hej', newImage, ASPECT_RATIO)}
         >
           <Text style={styles.paragraph2}> Hej-tester</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.menuButton}
-          onPress={() => console.log('hej', newImage, ASPECT_RATIO)}
-        >
-          <Text style={styles.paragraph2}> Hej-tester</Text>
+        <TouchableOpacity style={styles.menuButton} >
+          <Text style={styles.paragraph2}> 2</Text>
         </TouchableOpacity>
         </View>
 

@@ -26,6 +26,7 @@ export default function HomeScreen({ navigation, route }) {
   const [newImage, setNewImage] = useState(null)
 
   return (
+
     
     <View style={styles.screenContainer}>
        <MapView
@@ -45,8 +46,9 @@ export default function HomeScreen({ navigation, route }) {
           <Text style={styles.paragraph2}> Hej-tester</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.menuButton} >
-          <Text style={styles.paragraph2}> 2</Text>
+        <TouchableOpacity style={styles.menuButton} 
+          onPress={() => navigation.navigate('Weather')} >
+          <Text style={styles.paragraph2}> VÆÆÆR!ET</Text>
         </TouchableOpacity>
         </View>
 

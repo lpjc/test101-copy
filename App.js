@@ -9,6 +9,7 @@ const Stack = createStackNavigator();
 import CameraScreen from './components/CameraScreen';
 import HomeScreen from './components/HomeScreen';
 import ImagePickerExample from './components/ImagePicker';
+import WeatherScreen from './components/WeatherScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -22,6 +23,8 @@ export default function App() {
         <Stack.Screen name="Camera" component={ImagePickerExample}
         />
         <Stack.Screen name="Camera2" component={CameraScreen}
+        />
+        <Stack.Screen name="Weather" component={WeatherScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

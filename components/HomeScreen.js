@@ -3,6 +3,10 @@ import { Text, View, StyleSheet, Dimensions,ImageBackground, TouchableOpacity, B
 import Constants from 'expo-constants';
 import { Card } from 'react-native-paper';
 import MapView from 'react-native-maps';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+const Drawer = createDrawerNavigator();
+//import * as Buttons from '../buttons'
 
 import Map from './Map';
 import Overlay2 from './Overlay2';
@@ -22,6 +26,7 @@ export default function HomeScreen({ navigation, route }) {
   const [newImage, setNewImage] = useState(null)
 
   return (
+    
     <View style={styles.screenContainer}>
        <MapView
           style={styles.map} initialRegion={{
@@ -50,6 +55,7 @@ export default function HomeScreen({ navigation, route }) {
         </Card>
 
     </View>
+    
   );
 };
 

@@ -17,7 +17,7 @@ export default function Overlay2({navigation, newImage }) {
 
       </TouchableOpacity>
       <Text style={styles.paragraph}>
-        Maybe a step counter here?
+        Maybe a step counter here!?
       </Text>
     </View>
   );
